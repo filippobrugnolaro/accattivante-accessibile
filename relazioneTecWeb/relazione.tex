@@ -1,0 +1,127 @@
+\documentclass[a4paper]{article}
+
+\usepackage{style}
+
+\begin{document}
+
+    \copertina
+
+    \tableofcontents
+
+    \newpage
+
+    \section{Introduzione}
+	    \input{Sezioni/Introduzione/Introduzione.tex} % anche vuoto
+	    	\subsection{Abstract}
+		    	\input{Sezioni/Introduzione/Abstract.tex}
+
+	\newpage
+
+	% \section{Analisi}
+	% 	\input{Sezioni/Analisi/Analisi.tex} % anche vuoto
+	% 	\subsection{Studio dell'utenza finale}
+	% 		\input{Sezioni/Analisi/StudioUtenza.tex}
+	% 	\subsection{Possibili ricerche sui motori di ricerca}
+	% 		\input{Sezioni/Analisi/RicercheMotori.tex}
+		% \subsection{Casi d'uso}
+		% 	\input{Sezioni/Analisi/CasiUso.tex}
+		% 	\subsubsection{Utente generico}
+		% 		\input{Sezioni/Analisi/CasiUso/UtenteGenerico.tex}
+		% 	\subsubsection{Utente loggato}
+		% 		\input{Sezioni/Analisi/CasiUso/UtenteLoggato.tex}
+		% 	\subsubsection{Amministratore}
+		% 		\input{Sezioni/Analisi/CasiUso/Amministratore.tex}
+
+	% \newpage
+
+	\section{Progettazione}
+		\input{Sezioni/Progettazione/Progettazione.tex} % anche vuoto
+		\subsection{Obiettivi}
+			\input{Sezioni/Progettazione/Obiettivi.tex}
+		%parlare di separazione struttura contenuto ecc, accessibilità
+		% \subsection{Layout}
+		% 	\input{Sezioni/Progettazione/Layout.tex}
+		% 	\subsubsection{Resize e Mobile}
+				\input{Sezioni/Progettazione/Layout/Mobile.tex}
+		\subsection{Accessibilità}
+		 	\input{Sezioni/Progettazione/Accessibilita.tex}
+		 	\subsubsection{Trasformazione elegante}
+		 		\input{Sezioni/Progettazione/Accessibilita/TrasformazioneElegante.tex}
+
+		\newpage
+		 	\subsubsection{Schema colori}
+		 		\input{Sezioni/Progettazione/Accessibilita/SchemaColori.tex}
+		% \subsection{Schema organizzativo}
+		% 	\input{Sezioni/Progettazione/SchemaOrganizzativo.tex}
+		% principi web design
+
+	% \newpage
+
+	% \section{Implementazione}
+	% 	\input{Sezioni/Implementazione/Implementazione.tex} % anche vuoto
+	% 	\subsection{Linguaggi e strumenti}
+	% 		\input{Sezioni/Implementazione/LinguaggiEStrumenti.tex}
+	% 		\subsubsection{HTML5}
+	% 			\input{Sezioni/Implementazione/LinguaggiEStrumenti/HTML5.tex}
+	% 		\subsubsection{CSS}
+	% 			\input{Sezioni/Implementazione/LinguaggiEStrumenti/CSS.tex}				
+	% 		\subsubsection{PHP}
+	% 			\input{Sezioni/Implementazione/LinguaggiEStrumenti/PHP.tex}
+	% 		\newpage
+	% 		\subsubsection{SQL}
+	% 			\input{Sezioni/Implementazione/LinguaggiEStrumenti/SQL.tex}
+	% 		\subsubsection{JavaScript}
+	% 			\input{Sezioni/Implementazione/LinguaggiEStrumenti/JS.tex}
+	% 		\subsubsection{XAMPP}
+	% 			\input{Sezioni/Implementazione/LinguaggiEStrumenti/Xampp.tex}
+	% 		\subsubsection{Ispeziona di Chrome}
+	% 			\input{Sezioni/Implementazione/LinguaggiEStrumenti/ChromeInspect.tex}
+	% 	\subsection{Funzionamento generale}
+	% 		\input{Sezioni/Implementazione/FunzionamentoGenerale.tex}
+	% 		\subsubsection{Utente Generico}
+	% 			\input{Sezioni/Implementazione/FunzionamentoGenerale/UtenteGenerico.tex}
+	% 		\subsubsection{Utente Autorizzato}
+	% 			\input{Sezioni/Implementazione/FunzionamentoGenerale/UtenteLoggato.tex}
+	% 		\subsubsection{Amministratore}
+	% 			\input{Sezioni/Implementazione/FunzionamentoGenerale/Amministratore.tex}
+	% 	\subsection{Intrusività}
+	% 		\input{Sezioni/Implementazione/Intrusivita.tex}
+		
+	% \newpage
+
+	\section{Validazione}
+		\input{Sezioni/Validazione/Validazione.tex} % anche vuoto
+		\subsection{Strumenti usati}
+			\input{Sezioni/Validazione/StrumentiUsati.tex}
+			\subsubsection{WAVE Evaluation}
+				\input{Sezioni/Validazione/StrumentiUsati/WaveEvaluation.tex}
+			% \subsubsection{W3C HTML Validator}
+			% 	\input{Sezioni/Validazione/StrumentiUsati/HTMLValidator.tex}
+			% \subsubsection{W3C CSS Validator}
+			% 	\input{Sezioni/Validazione/StrumentiUsati/CSSValidator.tex}
+			% \subsubsection{PhpCodeChecker}
+			% 	\input{Sezioni/Validazione/StrumentiUsati/PHPValidator.tex}
+			% \subsubsection{Esprima}
+			% 	\input{Sezioni/Validazione/StrumentiUsati/JSValidator.tex}
+			% \subsubsection{Screenshot}
+			% 	\input{Sezioni/Validazione/Screenshot.tex}
+				
+	\newpage
+
+	% \section{Organizzazione del lavoro}
+	% 	\input{Sezioni/OrganizzazioneLavoro/Lavoro.tex}
+	
+	% \newpage
+	
+	\appendix
+	\addcontentsline{toc}{part}{Appendice}
+	\section{Note per la correzione}
+		\input{Appendice/Introduzione.tex}
+		\subsection{Credenziali}
+			\input{Appendice/Credenziali.tex}
+		\subsection{Popolamento}
+			\input{Appendice/Popolamento.tex}
+		% \subsection{Visibilità}
+		% 	\input{Appendice/Visibilita.tex}
+    
+\end{document}
