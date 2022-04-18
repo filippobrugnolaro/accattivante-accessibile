@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+
+
+<html lang="it">
+
+<head>
+	<title>Noleggio admin - Adrenaline Motocross Park</title>
+	<meta charset="utf-8">
+	<meta name="keywords" content="adrenaline motocross park, motocross, motocross padova, motocross veneto, enduro, sport, sport padova, noleggio moto, corsi motocross, moto, motorsport">
+	<meta name="description" content="Pannello di controllo noleggio, area admin Adrenaline Motocross Park">
+	<meta name="author" content="Brugnolaro Filippo, Cavaliere Alessandro, Gambirasio Leonardo, Simionato Riccardo">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="noindex, nofollow">
+
+	<script src="../../utils/utils.js"></script>
+
+	<link href="../../css/fontawesome/fontawesome.min.css" rel="stylesheet">
+	<link href="../../css/fontawesome/solid.min.css" rel="stylesheet">
+	<link href="../../css/fontawesome/regular.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" media="screen" href="../../css/style.css">
+<link rel="stylesheet" media="print" href="../../css/print.css">
+	<link rel="icon" href="../../images/logo/AMP_dark_icon.png">
+</head>
+
+<!-- start container 1 -->
+<body class="container1">
+
+	<!-- GRUPPO 1 -> ITEM 1 -->
+	<!-- start container 2 -->
+	<nav class="container2 container1-item"  aria-label="menu principale">
+
+		<!-- GRUPPO 2 -> ITEM 1 -->
+		<!-- LOGO -->
+				<div class="logobox">
+			<!-- LOGO -->
+			<h1 class="logo" lang="en">Adrenaline Motocross Park</h1>
+			<!-- HAMBURGER -->
+			<a href="javascript:void(0);" class="icon" onclick="toggleMenu()" aria-label="apri o chiudi il menu">
+				<i class="fa-solid fa-bars" id="menu-icon"></i>
+			</a>
+		</div>
+
+		<!-- GRUPPO 2 -> ITEM 2 -->
+		<!-- MENU LINK -->
+		<ul id="menu" class="showMenu">
+			<li><a href="../../" lang="en">Home</a></li>
+			<li><a href="../../tracciati/">Tracciati</a></li>
+			<li><a href="../../servizi/">Servizi</a></li>
+			<li><a href="../../corsi/">Corsi</a></li>
+			<li><a href="../../noleggio/">Noleggio</a></li>
+			<li><a href="../../ingressi/">Ingressi</a></li>
+			<li><a href="../../contatti/">Contatti</a></li>
+			<li id="active">Area riservata</li>
+		</ul>
+
+	</nav> <!-- end container 2 -->
+
+	<!-- GRUPPO 1 -> ITEM 2 -->
+	<nav id="breadcrumb" aria-label="percorso per giungere alla risorsa">
+		<p>Ti trovi in <a href="../../" lang="en">Home</a> / <a href="../../login/">Area riservata</a> / Gestione noleggio</p>
+	</nav>
+
+	<!-- GRUPPO 1 -> ITEM 3 -->
+	<!-- start container 3 -->
+	<div class="container3 container1-item">
+		<!-- GRUPPO 3 -> ITEM 1 -->
+		<nav class="navUser container3-item"  aria-label="menu area riservata">
+			<i id="userIcon" class="fa-solid fa-_userIcon_" aria-hidden="true"></i>
+
+			<ul id="sideMenu">
+				<li><a href="../" lang="en">Dashboard</a></li>
+				<li><a href="../dati-utente/">Gestione personale</a></li>
+				<li><a href="../tracciati/">Gestione tracciati</a></li>
+				<li id="activeSub">Gestione noleggio</li>
+				<li><a href="../ingressi/">Gestione ingressi</a></li>
+				<li><a href="../corsi/">Gestione corsi</a></li>
+				<li><a href="../messaggi/">Messaggi utenti</a></li>
+				<li><a href="../../login/logout.php" lang="en">Logout</a></li>
+			</ul>
+		</nav>
+
+		<!-- GRUPPO 3 -> ITEM 2 -->
+		<div class="contentReserved container3-item">
+			<h2>Gestione noleggi</h2>
+
+			<globalError/>
+
+			<article>
+				<h2>Prenotazioni noleggi</h2>
+					_prenotazioneNoleggio_
+				<erroreNoleggio/>
+			</article>
+
+			<article id='gestioneMoto'>
+				<h2>Gestione moto nel magazzino</h2>
+				_motoNoleggio_
+				<erroreMoto/>
+			</article>
+
+			<div class="button">
+				<a href="gestioneMoto.php">Nuova moto</a>
+			</div>
+
+
+			<a id="topButton" href="#"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Torna su</a>
+		</div>
+
+	</div> <!-- end container 3 -->
+
+	<!-- GRUPPO 1 -> ITEM 4 -->
+	<footer>
+		<div class="footerInfo">
+			<img src="../../images/logo/AMP_light.png" alt="Logo Adrenaline Motocross Park con le tre iniziali sovrapposte">
+			<p><span lang="en">Adrenaline Motocross Park</span> è un parco divertimenti dedicato ai motociclisti
+			e agli appassionati di motocross. Il progetto nasce dalla passione autentica
+			per questo sport e punta a dare un tocco di qualità in più per permettere agli
+			appassionati di esprimersi in totale comodità e sicurezza.</p>
+		</div>
+
+		<div class="footerDoveSiamo">
+			<h3>Dove siamo</h3>
+			<p class="informazioniFooter"><span lang="en">E-mail</span>: <a href="mailto:info@amp.com">info@amp.com</a></p>
+			<p class="informazioniFooter"><abbr title="Telefono">Tel:</abbr> <a href="tel:0498271200">049  8271200</a></p>
+			<p class="informazioniFooter">Indirizzo: <a href="https://goo.gl/maps/RxsTsaWRkuF1mHwz5" target="_blank"> Via Trieste 63, 35121 Padova PD</a></p>
+		</div>
+
+		<div class="footerValid">
+			<img src="../../images/valid-html401.png" alt="HTML valido" class="imgValidCode">
+			<p>Filippo Brugnolaro, Alessandro Cavaliere, Riccardo Simionato, Leonardo Gambirasio - <span lang="en">All
+					rights reserved</span></p>
+			<img src="../../images/vcss-blue.gif" alt="CSS valido" class="imgValidCode">
+		</div>
+	</footer>
+</body> <!-- end container 1 -->
+</html>
