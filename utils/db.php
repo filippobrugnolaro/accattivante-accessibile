@@ -16,15 +16,14 @@
 	use LEZIONE\Lesson;
 	use PRENOTAZIONELEZ\LessonReservation;
 	use MESSAGGIO\Message;
-use mysqli;
-use PRENOTAZIONE\Reservation;
+    use PRENOTAZIONE\Reservation;
 	use Throwable;
 
 	class dbAccess {
 		private const HOST = '127.0.0.1';
 		private const NAME = 'acavalie';
 		private const USER = 'acavalie';
-		private const PSW = 'aexie7Aht6aut3uo';
+		private const PSW = 'Veo5ooN7iechu1ru';
 
 		public const QUERIES = array(
 			//0
