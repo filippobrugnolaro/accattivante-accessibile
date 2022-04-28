@@ -1,13 +1,21 @@
 function setup() {
     var moto = document.getElementById('motoNol');
     var data = document.getElementById('dataDisponibile');
-    data.onchange = function(){getDirtBikes(moto,data.value); enDisSelectMoto(checkboxMoto.checked)};
 
-    var checkboxMoto = document.getElementById('moto');
-    checkboxMoto.onchange = function() {enDisSelectMoto(checkboxMoto.checked)};
+    if(data !== null) {
+        data.onchange = function () {
+            getDirtBikes(moto, data.value);
+            enDisSelectMoto(checkboxMoto.checked)
+        };
 
-    getDirtBikes(moto,data.value);
-    enDisSelectMoto(checkboxMoto.checked);
+        var checkboxMoto = document.getElementById('moto');
+        checkboxMoto.onchange = function () {
+            enDisSelectMoto(checkboxMoto.checked)
+        };
+
+        getDirtBikes(moto, data.value);
+        enDisSelectMoto(checkboxMoto.checked);
+    }
 }
 
 window.onload = setup;

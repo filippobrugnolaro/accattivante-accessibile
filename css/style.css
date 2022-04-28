@@ -568,7 +568,8 @@ form textarea {
 }
 
 /* *************** SERVIZI *************** */
-#contentServizi img {
+#contentServizi .icon-service {
+	font-size: 5em;
 	width: 15%;
 	padding: 0.5em;
 }
@@ -763,7 +764,7 @@ form textarea {
 
 .button > a:link {
 	text-align: center;
-	font: 1.3em;
+	font-size: 1.3em;
 	font-weight: bold;
 	color: var(--link-hover);
 }

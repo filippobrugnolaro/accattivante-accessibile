@@ -3,18 +3,22 @@ function setup() {
     var id = document.getElementById('corso');
     var descCorso = document.getElementById('descCorso');
 
-    id.onchange = function () {
+    if(id !== null) {
+        id.onchange = function () {
+            getDirtBikes(moto, id.value);
+            getDescCorso(descCorso, id.value);
+            enDisSelectMoto(checkboxMoto.checked);
+        }
+
+        var checkboxMoto = document.getElementById('moto');
+        checkboxMoto.onchange = function () {
+            enDisSelectMoto(checkboxMoto.checked)
+        };
+
         getDirtBikes(moto, id.value);
         getDescCorso(descCorso, id.value);
         enDisSelectMoto(checkboxMoto.checked);
     }
-
-    var checkboxMoto = document.getElementById('moto');
-    checkboxMoto.onchange = function() {enDisSelectMoto(checkboxMoto.checked)};
-
-    getDirtBikes(moto, id.value);
-    getDescCorso(descCorso, id.value);
-    enDisSelectMoto(checkboxMoto.checked);
 }
 
 window.onload = setup;
