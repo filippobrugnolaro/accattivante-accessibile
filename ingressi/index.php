@@ -11,11 +11,28 @@
     $globalError = "";
     $errorDetails = "";
 
+    $tableIngressi = "";
+
     if($conn->openDB()) {
         try {
             $records = $conn->getQueryResult(dbAccess::QUERIES[24]);
 
             if($records !== null) {
+                $tableIngressi = "<table title=\"tabella contenente le date di apertura future\">
+                                      <caption>Prossime date di apertura</caption>
+                                      <thead>
+                                        <tr>
+                                          <th scope=\"col\">Data</th>
+                                          <th scope=\"col\">Posti totali</th>
+                                          <th scope=\"col\">Posti disponibili</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <dettaglioIngressi/>
+                                      </tbody>
+                                    </table>";
+
+
                 foreach($records as $record) {
                     $recordsBody .= '<tr>';
                     $recordsBody .= '<th data-title="data" scope=\'row\'><time datetime=\''.$record['data'].'\'>'.date('d/m/Y',strtotime($record['data'])).'</time></th>';
@@ -41,6 +58,7 @@
     if(strlen($errorDetails) > 0)
         $errorDetails = "<p class=\"error\">$errorDetails</p>";
 
+    $page = str_replace('<tableIngressi/>', $tableIngressi, $page);
     $page = str_replace('<globalError/>',$globalError,$page);
     $page = str_replace('<erroreIngressi/>',$errorDetails,$page);
     $page = str_replace('<dettaglioIngressi/>',$recordsBody,$page);

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Creato il: Feb 01, 2022 alle 18:51
--- Versione del server: 10.3.32-MariaDB-0ubuntu0.20.04.1
--- Versione PHP: 7.4.3
+-- Generation Time: Apr 30, 2022 at 04:52 PM
+-- Server version: 10.3.34-MariaDB-0ubuntu0.20.04.1
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `data_disponibile`
+-- Table structure for table `data_disponibile`
 --
 
 CREATE TABLE `data_disponibile` (
@@ -34,7 +34,7 @@ CREATE TABLE `data_disponibile` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `data_disponibile`
+-- Dumping data for table `data_disponibile`
 --
 
 INSERT INTO `data_disponibile` (`data`, `posti`) VALUES
@@ -50,12 +50,17 @@ INSERT INTO `data_disponibile` (`data`, `posti`) VALUES
 ('2022-02-22', 50),
 ('2022-02-24', 50),
 ('2022-02-26', 150),
-('2022-02-27', 150);
+('2022-02-27', 150),
+('2022-05-14', 100),
+('2022-05-15', 100),
+('2022-05-26', 100),
+('2022-05-28', 100),
+('2022-05-29', 100);
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `ingressi_entrata`
+-- Table structure for table `ingressi_entrata`
 --
 
 CREATE TABLE `ingressi_entrata` (
@@ -65,17 +70,19 @@ CREATE TABLE `ingressi_entrata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `ingressi_entrata`
+-- Dumping data for table `ingressi_entrata`
 --
 
 INSERT INTO `ingressi_entrata` (`codice`, `utente`, `data`) VALUES
 (55, 'BRGFPP00B26C111Y', '2022-02-22'),
+(56, 'BRGFPP00B26C111Y', '2022-05-14'),
+(57, 'BRGFPP00B26C111Y', '2022-05-28'),
 (54, 'MMMGGG00A55G222V', '2022-02-16');
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `ingressi_lezione`
+-- Table structure for table `ingressi_lezione`
 --
 
 CREATE TABLE `ingressi_lezione` (
@@ -85,18 +92,19 @@ CREATE TABLE `ingressi_lezione` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `ingressi_lezione`
+-- Dumping data for table `ingressi_lezione`
 --
 
 INSERT INTO `ingressi_lezione` (`codice`, `utente`, `lezione`) VALUES
 (38, 'BRGFPP00B26C111Y', 11),
 (39, 'BRGFPP00B26C111Y', 15),
+(41, 'BRGFPP00B26C111Y', 18),
 (40, 'LDFDRE00P22A874G', 15);
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `lezione`
+-- Table structure for table `lezione`
 --
 
 CREATE TABLE `lezione` (
@@ -109,7 +117,7 @@ CREATE TABLE `lezione` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `lezione`
+-- Dumping data for table `lezione`
 --
 
 INSERT INTO `lezione` (`id`, `data`, `posti`, `descrizione`, `istruttore`, `pista`) VALUES
@@ -117,12 +125,15 @@ INSERT INTO `lezione` (`id`, `data`, `posti`, `descrizione`, `istruttore`, `pist
 (12, '2022-02-22', 5, 'Corso per amatori. Si divider&agrave; il tracciato in settori, che verranno analizzati singolarmente per capire le traiettorie ideali da utilizzare. A fine corso si far&agrave; una piccola simulazione di gara.', 'Leonardo Gambirasio', 1),
 (13, '2022-02-24', 4, 'Corso per professionisti. Si simuler&agrave; una giornata di gara nel suo complesso: prove libere, qualifiche, gara 1 e gara 2.', 'Riccardo Simionato', 1),
 (15, '2022-02-27', 2, 'Corso di enduro. Focalizza l\'attenzione sulle traiettorie da usare e la posizione in sella.', 'Filippo Brugnolaro', 3),
-(16, '2022-02-26', 5, 'Corso per neofiti, adatto a chi non &egrave; mai andato in moto.', 'Alessandro Cavaliere', 2);
+(16, '2022-02-26', 5, 'Corso per neofiti, adatto a chi non &egrave; mai andato in moto.', 'Alessandro Cavaliere', 2),
+(17, '2022-05-14', 5, 'Corso per piloti professionisti. Si andr&agrave; a simulare una giornata di gare, attraverso varie sessioni cronometrate e simulazioni di gara.', 'Alessandro Cavaliere', 1),
+(18, '2022-05-26', 10, 'Corso per piloti intermedi. Si ripasseranno i fondamentali della tecnica di guida, per poi provare la pista pi&ugrave; famosa dell\'impianto. Si divider&agrave; la pista in microsettori, analizzando le traiettorie ideale per ogni microsettore', 'Filippo Brugnolaro', 29),
+(19, '2022-05-29', 7, 'Corso per neofiti e per chi si approccia per la prima volta alla guida una moto. Si studieranno i fondamentali della tecnica di guida e della posizione in sella. Si effettueranno poi delle sessioni libere sotto la supervisione dell\'istruttore.', 'Filippo Brugnolaro', 30);
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `messaggio`
+-- Table structure for table `messaggio`
 --
 
 CREATE TABLE `messaggio` (
@@ -136,17 +147,18 @@ CREATE TABLE `messaggio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `messaggio`
+-- Dumping data for table `messaggio`
 --
 
 INSERT INTO `messaggio` (`id`, `nominativo`, `email`, `telefono`, `data`, `oggetto`, `testo`) VALUES
 (7, 'Filippo Brugnolaro', 'filippo.brugnolaro.fb@gmail.com', '3459751230', '2022-02-01 17:16:26', 'Richiesta corso #15', 'Buongiorno, volevo chiedrvi se potevate per favore contattarmi per spiegarmi quale sia la difficolt&agrave; del corso in questione'),
-(9, 'Igor Zawalewski', 'igor@zawalewski.com', '3455734583', '2022-02-01 17:21:44', 'Richiesta informazioni noleggio', 'Buongiorno, volevo sapere se esiste qualche tipo di copertura assicurativa durante il noleggio');
+(9, 'Igor Zawalewski', 'igor@zawalewski.com', '3455734583', '2022-02-01 17:21:44', 'Richiesta informazioni noleggio', 'Buongiorno, volevo sapere se esiste qualche tipo di copertura assicurativa durante il noleggio'),
+(19, 'Mario Rossi', 'mario.rossi@gmail.com', '3477318532', '2022-04-30 14:49:37', 'Ingresso spettatori', 'Buongiorno, volevo sapere il prezzo per l\'ingresso come spettatore presso il vostro impianto. Grazie mille. Mario Rossi');
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `moto`
+-- Table structure for table `moto`
 --
 
 CREATE TABLE `moto` (
@@ -158,7 +170,7 @@ CREATE TABLE `moto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `moto`
+-- Dumping data for table `moto`
 --
 
 INSERT INTO `moto` (`numero`, `cilindrata`, `marca`, `modello`, `anno`) VALUES
@@ -177,7 +189,7 @@ INSERT INTO `moto` (`numero`, `cilindrata`, `marca`, `modello`, `anno`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `noleggio`
+-- Table structure for table `noleggio`
 --
 
 CREATE TABLE `noleggio` (
@@ -189,19 +201,22 @@ CREATE TABLE `noleggio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `noleggio`
+-- Dumping data for table `noleggio`
 --
 
 INSERT INTO `noleggio` (`codice`, `data`, `attrezzatura`, `utente`, `moto`) VALUES
 (44, '2022-02-22', 1, 'LDFDRE00P22A874G', 13),
 (45, '2022-02-22', 1, 'BRGFPP00B26C111Y', 21),
 (46, '2022-02-27', 0, 'BRGFPP00B26C111Y', 24),
-(47, '2022-02-27', 1, 'LDFDRE00P22A874G', 20);
+(47, '2022-02-27', 1, 'LDFDRE00P22A874G', 20),
+(48, '2022-05-14', 1, 'BRGFPP00B26C111Y', 19),
+(49, '2022-05-28', 1, 'BRGFPP00B26C111Y', 13),
+(50, '2022-05-26', 1, 'BRGFPP00B26C111Y', 18);
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `pista`
+-- Table structure for table `pista`
 --
 
 CREATE TABLE `pista` (
@@ -215,18 +230,23 @@ CREATE TABLE `pista` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `pista`
+-- Dumping data for table `pista`
 --
 
 INSERT INTO `pista` (`id`, `lunghezza`, `descrizione`, `terreno`, `apertura`, `chiusura`, `foto`) VALUES
-(1, 1800, 'Tracciato pro, adatto solo ai piloti pi&ugrave; esperti. Si articola in lunghi panettoni, ampie curve paraboliche e salti doppi e tripli. Viene fresato raramente per simulare il pi&ugrave; possibile un tracciato di gara.', 'terra_morbida', '09:00:00', '17:00:00', '1.jpg'),
-(2, 1500, 'Tracciato easy, adatto a piloti neofiti e amatoriali. Si articola in panettoni di piccola e media lunghezza e curve principalmente senza sponde. Sono presenti molti canali e curve in contropendenza, per aiutare i piloti nell\'apprendimento della tecnica di guida.', 'terra_battuta', '10:00:00', '17:00:00', '2.jpg'),
-(3, 4200, 'Tracciato enduro. Adatto a piloti che non amano i salti o curve troppo impegnative. Si articola in lunghi rettilinei e ampie curve piatte.', 'terra_sassosa', '09:00:00', '15:00:00', '3.jpeg');
+(1, 1800, 'Tracciato pro, adatto solo ai piloti pi&ugrave; esperti. Si articola in lunghi panettoni, ampie curve paraboliche e salti doppi e tripli. Viene fresato raramente per simulare il pi&ugrave; possibile un tracciato di gara.', 'terra_morbida', '09:00:00', '17:00:00', '1.jpeg'),
+(2, 1500, 'Tracciato pro, adatto solo a piloti professionisti. Si articola in lunghe salite e discese, con salti di media lunghezza e curve principalmente senza sponde. Sono presenti molti canali e curve in contropendenza. Il tracciato viene raramente preparato, dato il fondo roccioso.', 'terra_sassosa', '10:00:00', '17:00:00', '2.jpeg'),
+(3, 2100, 'Tracciato intermedio. Adatto a piloti che non amano i salti lunghi o curve troppo impegnative. Si articola in lunghi rettilinei, modesti saliscendi e curve paraboliche. Il tracciato si sviluppa all\'interno di un boschetto, ed &egrave; particolarmente adatto agli allenamenti estivi.', 'terra_sassosa', '09:00:00', '15:00:00', '3.jpeg'),
+(28, 1700, 'Tracciato intermedio, adatto ai piloti amatoriali. Si sviluppa in un\'area prevalentemente montuosa, attraverso salti di media lunghezza, curve paraboliche e lunghi saliscendi. Allenarsi in questo tracciato &egrave; propedeutico per l\'accesso ai tracciati pro.', 'terra_battuta', '09:00:00', '18:00:00', '28.jpeg'),
+(29, 2000, 'Tracciato adatto ai piloti professionisti. Il percorso si sviluppa sul lato di una montagna, includendo lunghi salti, curve in contropendenza e veloci saliscendi. Grazie alle sue caratteristiche, viene spesso utilizzato dai piloti di fama mondiale per allenarsi.', 'terra_morbida', '11:00:00', '17:30:00', '29.jpeg'),
+(30, 1000, 'Tracciato facile, adatto ai neofiti e agli appassionati che vogliono divertirsi in sella ai propri mezzi. Si articola in dolci saliscendi e salti di piccola lunghezza. &Egrave; adatto per apprendere al meglio le basi della tecnica di guida.', 'terra_sassosa', '09:00:00', '16:00:00', '30.jpeg'),
+(31, 1300, 'Tracciato facile, adatto ai piloti neofiti. Il tracciato si articola in una serie di curve tortuose, non vi sono salti. &Egrave; adatto per imparare le basi della guida sulla sabbia. Ovviamente &egrave; anche il tracciato ideale per avere fotografie mozzafiato!', 'sabbia', '10:00:00', '15:00:00', '31.jpeg'),
+(32, 1000, 'Tracciato facile, adatto ai piloti neofiti. Si sviluppa in una serie di curve paraboliche, seguite da lunghi rettilinei e grandi salti. &Egrave; adatto ad imparare al meglio la tecnica per saltare.', 'terra_battuta', '12:00:00', '19:00:00', '32.jpeg');
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `utente`
+-- Table structure for table `utente`
 --
 
 CREATE TABLE `utente` (
@@ -242,7 +262,7 @@ CREATE TABLE `utente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `utente`
+-- Dumping data for table `utente`
 --
 
 INSERT INTO `utente` (`cf`, `username`, `cognome`, `nome`, `nascita`, `telefono`, `email`, `password`, `ruolo`) VALUES
@@ -252,17 +272,17 @@ INSERT INTO `utente` (`cf`, `username`, `cognome`, `nome`, `nascita`, `telefono`
 ('MMMGGG00A55G222V', 'margre', 'Greggio', 'Marta', '2001-01-13', '3216571845', 'ciao@ciao.com', '$2y$10$w1AZTfSyZt2PJT6vHCwc9e72eBUUanUAVzQxiKtfWTbms/HUnS4T.', 1);
 
 --
--- Indici per le tabelle scaricate
+-- Indexes for dumped tables
 --
 
 --
--- Indici per le tabelle `data_disponibile`
+-- Indexes for table `data_disponibile`
 --
 ALTER TABLE `data_disponibile`
   ADD PRIMARY KEY (`data`);
 
 --
--- Indici per le tabelle `ingressi_entrata`
+-- Indexes for table `ingressi_entrata`
 --
 ALTER TABLE `ingressi_entrata`
   ADD PRIMARY KEY (`codice`),
@@ -270,7 +290,7 @@ ALTER TABLE `ingressi_entrata`
   ADD KEY `ingressi_entrata_ibfk_1` (`data`);
 
 --
--- Indici per le tabelle `ingressi_lezione`
+-- Indexes for table `ingressi_lezione`
 --
 ALTER TABLE `ingressi_lezione`
   ADD PRIMARY KEY (`codice`),
@@ -278,7 +298,7 @@ ALTER TABLE `ingressi_lezione`
   ADD KEY `ingressi_lezione_ibfk_1` (`lezione`);
 
 --
--- Indici per le tabelle `lezione`
+-- Indexes for table `lezione`
 --
 ALTER TABLE `lezione`
   ADD PRIMARY KEY (`id`),
@@ -286,19 +306,19 @@ ALTER TABLE `lezione`
   ADD KEY `lezione_data` (`data`);
 
 --
--- Indici per le tabelle `messaggio`
+-- Indexes for table `messaggio`
 --
 ALTER TABLE `messaggio`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indici per le tabelle `moto`
+-- Indexes for table `moto`
 --
 ALTER TABLE `moto`
   ADD PRIMARY KEY (`numero`);
 
 --
--- Indici per le tabelle `noleggio`
+-- Indexes for table `noleggio`
 --
 ALTER TABLE `noleggio`
   ADD PRIMARY KEY (`codice`),
@@ -308,91 +328,91 @@ ALTER TABLE `noleggio`
   ADD KEY `noleggio_ibfk_1` (`moto`);
 
 --
--- Indici per le tabelle `pista`
+-- Indexes for table `pista`
 --
 ALTER TABLE `pista`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indici per le tabelle `utente`
+-- Indexes for table `utente`
 --
 ALTER TABLE `utente`
   ADD PRIMARY KEY (`cf`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- AUTO_INCREMENT per le tabelle scaricate
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT per la tabella `ingressi_entrata`
+-- AUTO_INCREMENT for table `ingressi_entrata`
 --
 ALTER TABLE `ingressi_entrata`
-  MODIFY `codice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `codice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
--- AUTO_INCREMENT per la tabella `ingressi_lezione`
+-- AUTO_INCREMENT for table `ingressi_lezione`
 --
 ALTER TABLE `ingressi_lezione`
-  MODIFY `codice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `codice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
--- AUTO_INCREMENT per la tabella `lezione`
+-- AUTO_INCREMENT for table `lezione`
 --
 ALTER TABLE `lezione`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT per la tabella `messaggio`
+-- AUTO_INCREMENT for table `messaggio`
 --
 ALTER TABLE `messaggio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT per la tabella `moto`
+-- AUTO_INCREMENT for table `moto`
 --
 ALTER TABLE `moto`
   MODIFY `numero` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT per la tabella `noleggio`
+-- AUTO_INCREMENT for table `noleggio`
 --
 ALTER TABLE `noleggio`
-  MODIFY `codice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `codice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
--- AUTO_INCREMENT per la tabella `pista`
+-- AUTO_INCREMENT for table `pista`
 --
 ALTER TABLE `pista`
-  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- Limiti per le tabelle scaricate
+-- Constraints for dumped tables
 --
 
 --
--- Limiti per la tabella `ingressi_entrata`
+-- Constraints for table `ingressi_entrata`
 --
 ALTER TABLE `ingressi_entrata`
   ADD CONSTRAINT `fk_ingressi_entrata` FOREIGN KEY (`utente`) REFERENCES `utente` (`cf`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `ingressi_entrata_ibfk_1` FOREIGN KEY (`data`) REFERENCES `data_disponibile` (`data`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limiti per la tabella `ingressi_lezione`
+-- Constraints for table `ingressi_lezione`
 --
 ALTER TABLE `ingressi_lezione`
   ADD CONSTRAINT `fk_ingressi_lezione` FOREIGN KEY (`utente`) REFERENCES `utente` (`cf`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `ingressi_lezione_ibfk_1` FOREIGN KEY (`lezione`) REFERENCES `lezione` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limiti per la tabella `lezione`
+-- Constraints for table `lezione`
 --
 ALTER TABLE `lezione`
   ADD CONSTRAINT `lezione_data` FOREIGN KEY (`data`) REFERENCES `data_disponibile` (`data`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `lezione_ibfk_1` FOREIGN KEY (`pista`) REFERENCES `pista` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limiti per la tabella `noleggio`
+-- Constraints for table `noleggio`
 --
 ALTER TABLE `noleggio`
   ADD CONSTRAINT `fk_data` FOREIGN KEY (`data`) REFERENCES `data_disponibile` (`data`) ON DELETE CASCADE ON UPDATE CASCADE,

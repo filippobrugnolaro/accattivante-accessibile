@@ -58,29 +58,21 @@
   </nav>
 
   <!-- GRUPPO 1 -> ITEM 3 -->
-  <div id="contentIngressi" class="container1-item content">
+  <div id="contentIngressi" class="container1-item content nole">
       <h2>Ingressi futuri</h2>
 
-      <p>È gradita la prenotazione per gli allenamenti, dal momento che le restrizioni dovute alla pandemia non ci consentono di accogliervi
-        tutti quanti. Ricordiamo che è tassativo consegnare, al momento dell'ingresso nell'impianto, l'autocertificazione COVID-19 compilata.
-        Qualora l'alto numero di partecipazioni non consenta di prenotarsi per una determinata data, consigliamo di contattarci per verificare
-        l'effettiva disponibilità dell'impianto.
-      </p>
+      <div class="noleggioDescription">
+          <img src="../images/services/ingresso1.jpeg" alt="Un pilota che affronta un rettilineo a tutta velocità">
+          <p>È gradita la prenotazione per gli allenamenti, dal momento che le restrizioni dovute alla pandemia non ci consentono di accogliervi
+              tutti quanti. Ricordiamo che è tassativo consegnare, al momento dell'ingresso nell'impianto, l'autocertificazione COVID-19 compilata.
+              Qualora l'alto numero di partecipazioni non consenta di prenotarsi per una determinata data, consigliamo di contattarci per verificare
+              l'effettiva disponibilità dell'impianto.
+          </p>
+      </div>
+
 
       <div class="tableContainer">
-        <table title="tabella contenente le date di apertura future">
-          <caption>Prossime date di apertura</caption>
-          <thead>
-            <tr>
-              <th scope="col">Data</th>
-              <th scope="col">Posti totali</th>
-              <th scope="col">Posti disponibili</th>
-            </tr>
-          </thead>
-          <tbody>
-            <dettaglioIngressi/>
-          </tbody>
-        </table>
+          <tableIngressi/>
       </div>
 
       <erroreIngressi/>

@@ -4,7 +4,7 @@ var validationDetails = {
 	"email"        : [/^([\w\-\+\.]+)\@([\w\-\+\.]+)\.([\w\-\+\.]+)$/,"Inserire un indirizzo e-mail corretto"],
 	"telefono"      : [/^\d{8,10}$/,"Inserire un numero di telefono valido tra 8 e 10 cifre"],
 	"oggetto"       : [/^.{2,}$/,"Inserire almeno 2 caratteri"],
-	"messaggio"   : [/^.{10,}$/,"Inserire almeno 10 caratteri"],
+	"messaggio"   : [/^[\s\S]{10,1000}$/,"Inserire almeno 10 caratteri"],
 	"termini"       : [null,"Accettare i termini e l'informativa"]
 }
 
@@ -24,7 +24,7 @@ function showError(input) {
 function fieldValidation(input, event = null) {
 	removeErrorMessage(input);
 	if(input.type !== "checkbox"){
-		if((event !== null && input.value.search(validationDetails[input.id][0]) != 0)
+		if((event !== null && input.value.search(validationDetails[input.id][0]) !== 0)
 			|| (event === null && (input.value.length > 0 && input.value.search(validationDetails[input.id][0]) != 0))) {
 			showError(input);
 			return false;
@@ -73,11 +73,11 @@ function formValidation(event) {
 		ret = ret && validation;
 	}
 
-	if(ret == false) {
+	if(ret === false) {
 		focus.focus();
 	}
 
-	console.log(ret == true);
+	console.log(ret);
 
 	return ret;
 }

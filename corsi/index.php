@@ -45,10 +45,10 @@
         $globalError = 'Errore di connessione, riprovare più tardi.';
 
     if(strlen($globalError) > 0)
-        $globalError = "<p>$globalError</p>";
+        $globalError = "<p class='error'>$globalError</p>";
 
     if(strlen($errorDetails) > 0)
-        $errorDetails = "<p>$errorDetails</p>";
+        $errorDetails = "<p class='error'>$errorDetails</p>";
 
     $page = str_replace('<globalError/>',$globalError,$page);
     $page = str_replace('<erroreCorsi/>',$errorDetails,$page);
